@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stardust simulation in JS</title>
+		
+        <link rel="stylesheet" type="text/css" href="style.css">
+		
+	</head>
+<body>
+	<!-- The main Stardust container, fills the entire screen. -->
+	<div id="container"></div>
+
+	<div id="info">
+		<h3><a href="https://github.com/ddeveloperr/JS_Stardust">Stardust</a></h3>
+		<span class="bigText">
+			<p>Stardust is a very simple project where you can play with javascript class and turns a div into
+				a cool Stardust. Play with code, hack it, learn by doing.</p>
+		</span>
+		<a href="#" onclick="randomise()">Randomise</a> | <a href="stardust.js" target="blank">stardust.js</a> |
+		<a href="https://github.com/ddeveloperr/JS_Stardust">GitHub</a>
+		
+	</div>
+
+	<script src="stardust.js"></script>
+	<script>
+		var container = document.getElementById('container');
+		var stardust = new Stardust();
+		stardust.initialise(container);
+		stardust.start();
+
+		function randomise() {
+			stardust.stop();
+			stardust.stars = Math.random()*10000 + 50;
+			stardust.minVelocity = Math.random()*30+5;
+			stardust.maxVelocity = Math.random()*50 + stardust.minVelocity;			
+			stardust.start();
+		}
+	</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41728580-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
